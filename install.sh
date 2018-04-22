@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Update
 sudo yum -y update
 
@@ -24,13 +26,7 @@ nvm install --lts
 # Install composer
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+echo 'PATH=$PATH:$HOME/.composer/vendor/bin' >> ~/.bash_profile
 
 # Install Laravel
 composer global require "laravel/installer"
-
-# Install Spark
-git clone https://github.com/laravel/spark-installer.git ~/environment/spark-installer
-composer install -d ~/environment/spark-installer/
-
-# Set paths
-echo 'PATH=$PATH:~/environment/spark-installer/:$HOME/.composer/vendor/bin' >> ~/.bash_profile
