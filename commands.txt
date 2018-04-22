@@ -1,0 +1,17 @@
+sudo yum -y update
+sudo yum install -y php71 
+sudo yum install -y php71-devel 
+sudo yum install -y php71-mysql 
+sudo yum install -y php71-mysqlnd
+sudo yum install -y php71-pdo 
+sudo yum install -y php71-mbstring 
+sudo yum install -y php71-mcrypt
+sudo ln -sf /etc/httpd/conf.d/php-conf.7.1 /etc/alternatives/php.conf
+sudo ln -sf /etc/httpd/conf.modules.d/15-php-conf.7.1 /etc/alternatives/10-php.conf
+sudo update-alternatives --set php /usr/bin/php-7.1
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+git clone https://github.com/laravel/spark-installer.git ~/environment/spark-installer
+composer install -d ~/environment/spark-installer/
+echo 'PATH=$PATH:~/environment/spark-installer/:$HOME/.composer/vendor/bin' >> ~/.bash_profile
