@@ -1,6 +1,6 @@
 # aws-c9-laravel: PHP 7.1
 
-Run this script to set up PHP 7.1 ready for Laravel 5.6.
+Run this script to set up PHP 7.1 and install the Laravel Installer.
 
 ### Prerequisite
 
@@ -13,4 +13,10 @@ Run the following on a fresh cloud9 project.
 
 ``` bash
 curl -L https://raw.githubusercontent.com/JonoHall/aws-c9-laravel/master/install.sh | bash
+```
+
+Set up your Laravel project.
+
+``` bash
+laravel new project-name
 ```
