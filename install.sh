@@ -57,3 +57,16 @@ while true; do
         * ) echo "Please answer y or n.";;
     esac
 done
+
+# Optionally install Heroku
+while true; do
+    read -p "Do you wish to install Heroku?" yn
+    case $yn in
+        [Yy]* ) 
+			# Install Heroku
+			nvm install 8
+			npm install -g heroku
+        [Nn]* ) exit;;
+        * ) echo "Please answer y or n.";;
+    esac
+done
