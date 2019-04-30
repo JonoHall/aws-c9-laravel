@@ -71,4 +71,16 @@ while true; do
     esac
 done
 
-sudo reboot
+# Optionally reboot
+while true; do
+    read -p "Do you want to reboot?" yn
+    case $yn in
+        [Yy]* ) 
+			# Reboot
+			sudo reboot
+        [Nn]* ) exit;;
+        * ) echo "Please answer y or n.";;
+    esac
+done
+
+
