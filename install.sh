@@ -70,3 +70,5 @@ while true; do
         * ) echo "Please answer y or n.";;
     esac
 done
+
+sudo reboot
